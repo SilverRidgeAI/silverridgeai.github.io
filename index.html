@@ -23,6 +23,7 @@
       background: var(--bg);
       color: var(--text);
       font-family: var(--sans);
+      overflow-x: hidden;
     }
 
     /* ── scroll indicator ── */
@@ -184,6 +185,10 @@
 
     .nowrap-desktop { white-space: nowrap; }
 
+    @media (min-width: 769px) {
+      h1 { width: max-content; max-width: 90vw; }
+    }
+
     /* ── responsive ── */
     @media (max-width: 768px) {
       .page { padding: 0 24px; }
@@ -195,15 +200,15 @@
         gap: 20px;
       }
 
-      nav { gap: 20px; }
+      nav { gap: 20px; flex-wrap: wrap; }
 
       h1 { font-size: clamp(38px, 11vw, 64px); width: auto; }
 
       .hero-body { font-size: 15px; }
 
-      .actions { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .actions { flex-direction: column; align-items: stretch; gap: 12px; }
 
-      .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
+      .btn-primary, .btn-ghost { width: 100%; justify-content: center; box-sizing: border-box; }
 
       .tag-strip { gap: 8px; }
 
@@ -228,7 +233,7 @@
       .approach-graf p { font-size: 17px; }
       .approach-graf p.wdwty { font-size: 20px; }
       .approach-graf p.kicker { font-size: 13px; }
-      .scroll-hint { bottom: 80px; }
+      .scroll-hint { bottom: 100px; }
     }
 
     @media (max-width: 480px) {
@@ -238,7 +243,7 @@
       nav { flex-wrap: wrap; gap: 14px; }
       .logo-sub { font-size: 8px; letter-spacing: 0.12em; }
       .logo-name { font-size: 13px; }
-      .scroll-hint { bottom: 72px; }
+      .scroll-hint { bottom: 96px; }
       .tag-strip { gap: 6px; }
       .tag { font-size: 9px; padding: 3px 8px; }
     }
@@ -262,6 +267,7 @@
       width: 38px;
       height: auto;
       filter: drop-shadow(0 0 10px rgba(220,230,255,0.5));
+      background: transparent;
     }
 
     .logo-text {
@@ -327,8 +333,12 @@
     }
 
     .hero-inner {
-      max-width: 680px;
+      max-width: 100%;
       animation: fadeUp 1s ease both;
+    }
+
+    @media (min-width: 769px) {
+      .hero-inner { max-width: 680px; }
     }
 
     h1 {
@@ -338,8 +348,6 @@
       line-height: 0.95;
       margin-bottom: 32px;
       color: var(--text);
-      max-width: none;
-      width: max-content;
     }
 
     .eyebrow {
@@ -383,7 +391,7 @@
       font-weight: 300;
       line-height: 1.7;
       color: var(--dim);
-      max-width: 480px;
+      max-width: min(480px, 100%);
       text-wrap: pretty;
       margin-bottom: 48px;
     }
