@@ -28,7 +28,7 @@
     /* ── scroll indicator ── */
     .scroll-hint {
       position: absolute;
-      bottom: 32px;
+      bottom: 88px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
@@ -179,8 +179,10 @@
       min-height: 100vh;
       display: grid;
       grid-template-rows: auto 1fr auto;
-      padding: 0 64px;
+      padding: 0 64px 0;
     }
+
+    .nowrap-desktop { white-space: nowrap; }
 
     /* ── responsive ── */
     @media (max-width: 768px) {
@@ -226,12 +228,19 @@
       .approach-graf p { font-size: 17px; }
       .approach-graf p.wdwty { font-size: 20px; }
       .approach-graf p.kicker { font-size: 13px; }
+      .scroll-hint { bottom: 80px; }
     }
 
     @media (max-width: 480px) {
       .page { padding: 0 18px; }
-      h1 { font-size: clamp(34px, 13vw, 52px); }
+      h1 { font-size: clamp(32px, 12vw, 48px); width: auto; }
+      .nowrap-desktop { white-space: normal; }
       nav { flex-wrap: wrap; gap: 14px; }
+      .logo-sub { font-size: 8px; letter-spacing: 0.12em; }
+      .logo-name { font-size: 13px; }
+      .scroll-hint { bottom: 72px; }
+      .tag-strip { gap: 6px; }
+      .tag { font-size: 9px; padding: 3px 8px; }
     }
 
     /* ── header ── */
@@ -501,6 +510,7 @@
       border: 1px solid rgba(160,185,255,0.15);
       border-radius: 3px;
       padding: 4px 10px;
+      white-space: nowrap;
     }
 
     @keyframes fadeUp {
@@ -538,7 +548,7 @@
     <div class="hero-inner">
       <div class="eyebrow">AI Infrastructure</div>
       <h1>
-        <span class="silver">Hard problems<br><span style="white-space:nowrap;">need Solid Ground.</span></span>
+        <span class="silver">Hard problems<br><span class="nowrap-desktop">need Solid Ground.</span></span>
       </h1>
       <div class="tag-strip">
         <span class="tag">Production Ready</span>
@@ -546,7 +556,7 @@
         <span class="tag">Self Hosted</span>
       </div>
       <p class="hero-body">
-        SilverRidge AI builds infrastructure for knowledge-intensive applications. Tools that reason correctly at scale, stay under your control, and doesn't cut corners.<br><strong style="color:rgba(225,232,255,0.9);">It makes them.</strong>
+        SilverRidge AI builds infrastructure for knowledge intensive applications. Tools that reason correctly at scale, stays under your control and doesn't cut corners.<br><strong style="color:rgba(225,232,255,0.9);">It makes them.</strong>
       </p>
       <div class="actions">
         <a href="https://github.com/SilverRidgeAI" target="_blank" rel="noopener" class="btn-primary">
